@@ -1,0 +1,42 @@
+{
+  "name": "trailpack-proxy-social",
+  "version": "0.0.0",
+  "description": "Social Trailpack for Proxy Engine",
+  "homepage": "http://trailsjs.io",
+  "author": {
+    "name": "scott-wyatt",
+    "email": "scottwyatt86@gmail.com",
+    "url": "https://cali-style.com"
+  },
+  "main": "index.js",
+  "keywords": [
+    "proxy engine",
+    "trailpack",
+    "trails",
+    "trailjs"
+  ],
+  "dependencies": {
+    "trailpack": "v2-latest"
+  },
+  "devDependencies": {
+    "lodash": "^4.11.1",
+    "trails": "v2-latest",
+    "eslint": "^2.4",
+    "eslint-config-trails": "^2",
+    "mocha": "^2.4.5",
+    "trailpack-express": "^2.0.0-rc1",
+    "trailpack-sequelize": "^1.1.1",
+    "smokesignals": "v2-latest"
+  },
+  "scripts": {
+    "test": "eslint --fix . && mocha"
+  },
+  "engines": {
+    "node": ">= 4.0.0"
+  },
+  "eslintConfig": {
+    "extends": "trails"
+  },
+  "repository": "git@github.com:CaliStyle/trailpack-proxy-social.git",
+  "license": "MIT"
+}
