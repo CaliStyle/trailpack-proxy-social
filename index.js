@@ -1,8 +1,9 @@
 'use strict'
 
 const Trailpack = require('trailpack')
+const lib = require('./lib')
 
-module.exports = class SocialTrailpack extends Trailpack {
+module.exports = class ProxySocialTrailpack extends Trailpack {
 
   /**
    * TODO document method
@@ -15,7 +16,12 @@ module.exports = class SocialTrailpack extends Trailpack {
    * TODO document method
    */
   configure () {
-
+    return Promise.all([
+      lib.ProxySocial.addPolicies(this.app),
+      lib.ProxySocial.addRoutes(this.app),
+      lib.ProxySocial.addAgenda(this.app),
+      lib.ProxySocial.copyDefaults(this.app)
+    ])
   }
 
   /**

@@ -3,7 +3,7 @@
 const _ = require('lodash')
 const smokesignals = require('smokesignals')
 
-module.exports = _.defaultsDeep({
+const App = {
   pkg: {
     name: require('../package').name + '-test'
   },
@@ -15,12 +15,15 @@ module.exports = _.defaultsDeep({
   config: {
     main: {
       packs: [
-        smokesignals.Trailpack,
-        require('trailpack-core'),
+        require('trailpack-router'),
+        require('trailpack-express'),
+        require('trailpack-sequelize'),
         require('../')
       ]
     }
   }
-}, smokesignals.FailsafeConfig)
+}
 
 
+_.defaultsDeep(App, smokesignals.FailsafeConfig)
+module.exports = App
